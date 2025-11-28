@@ -1,6 +1,6 @@
-# Dietly2
+# Dietly
 
-Dietly2 is a single-page React application for building and tracking nutrition plans with a focus on Indian foods. It provides a multi-step diet form, a food selector (with a local dataset of Indian foods), calorie estimation, nutrition goals, and trackers — all built using Vite + React and Tailwind CSS utilities.
+Dietly is a single-page React application for building and tracking nutrition plans with a focus on Indian foods. It provides a multi-step diet form, a food selector (with a local dataset of Indian foods), calorie estimation, nutrition goals, and trackers — all built using Vite + React and Tailwind CSS utilities.
 
 ## Key features
 
@@ -35,7 +35,6 @@ Dietly2/
 │   ├── assets/             # Images and static assets
 │   ├── components/         # Application components
 │   │   ├── CalorieEstimator.jsx
-│   │   ├── DietForm.jsx
 │   │   ├── DietResults.jsx
 │   │   ├── FoodSelector.jsx
 │   │   ├── LanguageSwitcher.jsx
@@ -43,7 +42,7 @@ Dietly2/
 │   │   ├── NutritionGoals.jsx
 │   │   ├── NutritionTracker.jsx
 │   │   ├── SelectedMealPlan.jsx
-│   │   └── ui/             # UI primitives (button, dialog, toast, input, etc.)
+│   │   └── ui/             # shadcn UI components like input, selector, etc
 │   ├── data/
 │   │   └── indianFoods.js  # Static dataset of Indian foods and nutrition values
 │   ├── hooks/
