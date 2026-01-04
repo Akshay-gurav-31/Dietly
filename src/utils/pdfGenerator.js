@@ -63,7 +63,7 @@ export const generateDietPDF = (userData, selectedFoods, nutritionGoals, bmi, bm
   doc.setTextColor(...textColor);
 
   // User Profile Section
-  drawSectionHeader('👤 Personal Profile');
+  drawSectionHeader('Personal Profile');
   
   const profileData = [
     ['Age', `${userData.age} years`],
@@ -93,7 +93,7 @@ export const generateDietPDF = (userData, selectedFoods, nutritionGoals, bmi, bm
 
   // Health Conditions
   if (userData.diseases?.length > 0 || userData.geneticDisorders) {
-    drawSectionHeader('🏥 Health Conditions');
+    drawSectionHeader('Health Conditions');
     
     doc.setFontSize(10);
     if (userData.diseases?.length > 0) {
@@ -124,7 +124,7 @@ export const generateDietPDF = (userData, selectedFoods, nutritionGoals, bmi, bm
   }
 
   // BMI & Health Metrics
-  drawSectionHeader('📊 Health Metrics');
+  drawSectionHeader('Health Metrics');
   
   const bmiData = [
     ['BMI Score', bmi.toFixed(1)],
@@ -158,7 +158,7 @@ export const generateDietPDF = (userData, selectedFoods, nutritionGoals, bmi, bm
   yPosition = 20;
 
   // Nutrition Goals
-  drawSectionHeader('🎯 Daily Nutrition Goals');
+  drawSectionHeader('Daily Nutrition Goals');
   
   const nutritionData = [
     ['Nutrient', 'Daily Target', 'Description'],
@@ -182,7 +182,7 @@ export const generateDietPDF = (userData, selectedFoods, nutritionGoals, bmi, bm
 
   // Smart Filtering Rules
   if (recommendationRules?.length > 0) {
-    drawSectionHeader('🧠 Smart Filtering Applied');
+    drawSectionHeader('Smart Filtering Applied');
     
     doc.setFontSize(10);
     recommendationRules.forEach((rule, index) => {
@@ -195,7 +195,7 @@ export const generateDietPDF = (userData, selectedFoods, nutritionGoals, bmi, bm
 
   // ========== MEAL PLAN ==========
   checkPageBreak(40);
-  drawSectionHeader('🍽️ Your Selected Meal Plan');
+  drawSectionHeader('Your Selected Meal Plan');
 
   if (selectedFoods.length === 0) {
     doc.setFontSize(11);
@@ -212,10 +212,10 @@ export const generateDietPDF = (userData, selectedFoods, nutritionGoals, bmi, bm
     };
 
     const mealLabels = {
-      breakfast: '🌅 Breakfast',
-      lunch: '☀️ Lunch',
-      snacks: '🍎 Snacks',
-      dinner: '🌙 Dinner'
+      breakfast: 'Breakfast',
+      lunch: 'Lunch',
+      snacks: 'Snacks',
+      dinner: 'Dinner'
     };
 
     Object.entries(mealGroups).forEach(([mealType, foods]) => {
@@ -253,7 +253,7 @@ export const generateDietPDF = (userData, selectedFoods, nutritionGoals, bmi, bm
 
     // Total Summary
     checkPageBreak(40);
-    drawSectionHeader('📈 Meal Plan Summary');
+    drawSectionHeader('Meal Plan Summary');
 
     const totalNutrition = selectedFoods.reduce((acc, food) => ({
       calories: acc.calories + (food.calories || 0),
@@ -357,7 +357,7 @@ function getGoalLabel(goal) {
 
 function getStatusLabel(current, target) {
   const percentage = (current / target) * 100;
-  if (percentage < 80) return '⬇️ Below Target';
-  if (percentage > 110) return '⬆️ Above Target';
-  return '✅ On Track';
+  if (percentage < 80) return 'Below Target';
+  if (percentage > 110) return 'Above Target';
+  return 'On Track';
 }
